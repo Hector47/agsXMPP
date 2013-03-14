@@ -19,9 +19,6 @@
  * http://www.ag-software.de														 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
 
-using System;
-using System.Text;
-
 using agsXMPP.protocol.client;
 
 namespace agsXMPP.protocol.extensions.pubsub.owner
@@ -46,23 +43,23 @@ namespace agsXMPP.protocol.extensions.pubsub.owner
         #region << Constructors >>
         public PubSubIq()
         {
-            this.GenerateId();
-            this.AddChild(m_PubSub);
+            GenerateId();
+            AddChild(m_PubSub);
         }
 
         public PubSubIq(IqType type) : this()
         {
-            this.Type = type;
+            Type = type;
         }
 
         public PubSubIq(IqType type, Jid to) : this(type)
         {
-            this.To = to;
+            To = to;
         }
 
         public PubSubIq(IqType type, Jid to, Jid from) : this(type, to)
         {
-            this.From = from;
+            From = from;
         }
         #endregion
 
@@ -73,7 +70,5 @@ namespace agsXMPP.protocol.extensions.pubsub.owner
                 return m_PubSub;
             }
         }
-
-
     }
 }
