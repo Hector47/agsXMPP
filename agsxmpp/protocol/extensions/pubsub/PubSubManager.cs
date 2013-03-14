@@ -1187,6 +1187,30 @@ namespace agsXMPP.protocol.extensions.pubsub
                 m_connection.IqGrabber.SendIq(pubsubIq, cb, cbArgs);
         }
         #endregion
+
+        #region << Owner Request Node Configuration >>
+
+        public void RequestNodeConfiguration(Jid to, string node)
+        {
+            RequestNodeConfiguration(to, node, null, null);
+        }
+
+        public void RequestNodeConfiguration(Jid to, string node, IqCB cb)
+        {
+            RequestNodeConfiguration(to, node, cb, null);
+        }
+
+        public void RequestNodeConfiguration(Jid to, string node, IqCB cb, object cbArgs)
+        {
+            var pubsubIq = new owner.PubSubIq(IqType.get, to);
+            pubsubIq.PubSub.Configure = new owner.Configure(node);
+            
+            if (cb == null)
+                m_connection.Send(pubsubIq);
+            else
+                m_connection.IqGrabber.SendIq(pubsubIq, cb, cbArgs);
+        }
+        #endregion
     }
     
 }
