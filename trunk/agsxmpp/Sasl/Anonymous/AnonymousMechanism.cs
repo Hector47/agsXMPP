@@ -19,9 +19,6 @@
  * http://www.ag-software.de														 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
 
-using System;
-
-using agsXMPP;
 using agsXMPP.Xml.Dom;
 using agsXMPP.protocol.sasl;
 
@@ -57,13 +54,6 @@ namespace agsXMPP.Sasl.Anonymous
         /// <summary>
         /// 
         /// </summary>
-        public AnonymousMechanism()
-        {
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="con"></param>
         public override void Init(XmppClientConnection con)
         {            
@@ -79,5 +69,4 @@ namespace agsXMPP.Sasl.Anonymous
             // *No Challenges* in SASL ANONYMOUS
         }
     }
-    
 }
