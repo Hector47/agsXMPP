@@ -56,14 +56,8 @@ namespace agsXMPP.Sasl.Facebook
                 var pairs = ParseMessage(msg);
                 string res = BuildResponse(pairs);
 
-                XmppClientConnection.Send(new Response(ToB64String(res)));
+                XmppClientConnection.Send(new Response(res));
             }
-        }
-
-        static string ToB64String(string sin)
-        {
-            byte[] msg = Encoding.UTF8.GetBytes(sin);
-            return Convert.ToBase64String(msg, 0, msg.Length);
         }
 
         private static Dictionary<string, string> ParseMessage(string msg)
