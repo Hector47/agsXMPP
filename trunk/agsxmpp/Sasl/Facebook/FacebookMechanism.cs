@@ -37,6 +37,7 @@ namespace agsXMPP.Sasl.Facebook
         /// <param name="con"></param>
         public override void Init(XmppClientConnection con)
         {
+            XmppClientConnection = con;
             con.Send(new Auth(MechanismType.X_FACEBOOK_PLATFORM));
         }
 
