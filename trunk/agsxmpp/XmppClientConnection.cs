@@ -780,19 +780,26 @@ namespace agsXMPP
 
                 if (dnsServers.Count > 0)
                 {
-                    // Take the 1st DNS Server for our query
-                    IPAddress dnsServer = dnsServers[0];
-                    
-                    string queryDomain = SRV_RECORD_PREFIX + Server;
-                    
-                    _SRVRecords = Resolver.SRVLookup(queryDomain, dnsServer);
+                    foreach (var dnsServer in dnsServers)
+                    {
+                        try
+                        {
+                            string queryDomain = SRV_RECORD_PREFIX + Server;
 
-                    SetConnectServerFromSRVRecords();   
+                            _SRVRecords = Resolver.SRVLookup(queryDomain, dnsServer);
+                            SetConnectServerFromSRVRecords();
+                            break;
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                FireOnError(this, ex);                
+                FireOnError(this, ex);
             }
 #endif
         }
