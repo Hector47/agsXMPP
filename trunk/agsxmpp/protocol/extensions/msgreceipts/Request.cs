@@ -19,8 +19,6 @@
  * http://www.ag-software.de														 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-using System;
-
 using agsXMPP.Xml.Dom;
 
 namespace agsXMPP.protocol.extensions.msgreceipts
@@ -35,8 +33,8 @@ namespace agsXMPP.protocol.extensions.msgreceipts
          */
         public Request()
         {
-            this.TagName    = "request";
-            this.Namespace  = Uri.MSG_RECEIPT;
+            TagName    = "request";
+            Namespace  = Uri.MSG_RECEIPT;
         }
     }
 }

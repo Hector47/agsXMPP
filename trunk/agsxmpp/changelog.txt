@@ -239,3 +239,4 @@ version 0.25
 - added SSL Support using Mono.Security (Doesnt work in the CF)
 - created key file for signing the assembly
 - improvements to the DOM Parser
+- add id to message receipts received element

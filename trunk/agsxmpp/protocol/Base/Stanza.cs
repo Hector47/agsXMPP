@@ -19,12 +19,6 @@
  * http://www.ag-software.de														 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-using System;
-
-using agsXMPP.Xml;
-using agsXMPP.Xml.Dom;
-using agsXMPP.protocol.client;
-
 namespace agsXMPP.protocol.Base
 {
 	/// <summary>
@@ -33,7 +27,7 @@ namespace agsXMPP.protocol.Base
 	/// </summary>
 	public abstract class Stanza : DirectionalElement
 	{
-		public Stanza() : base()
+		public Stanza()
 		{
 		}
 
@@ -43,23 +37,23 @@ namespace agsXMPP.protocol.Base
 
 		public Stanza(string tag, string ns) : base(tag)
 		{			
-			this.Namespace = ns;
+			Namespace = ns;
 		}
 
 		public Stanza(string tag, string text, string ns) : base(tag, text)
 		{
-			this.Namespace = ns;
+			Namespace = ns;
 		}
 
 		public string Id
 		{
 			get 
 			{ 
-				return this.GetAttribute("id");
+				return GetAttribute("id");
 			}
 			set
 			{ 
-				this.SetAttribute("id", value); 
+				SetAttribute("id", value); 
 			}
 		}
 
@@ -71,7 +65,7 @@ namespace agsXMPP.protocol.Base
 		public void GenerateId()
 		{
 			string sId = agsXMPP.Id.GetNextId();
-			this.Id = sId;			
+			Id = sId;			
 		}
 
         /// <summary>        
@@ -93,25 +87,5 @@ namespace agsXMPP.protocol.Base
             get { return GetAttribute("xml:lang"); }
             set { SetAttribute("xml:lang", value); }
         }
-        		
-        ///// <summary>
-        ///// Error Child Element
-        ///// </summary>
-        //public agsXMPP.protocol.client.Error Error
-        //{
-        //    get
-        //    {
-        //        return SelectSingleElement(typeof(agsXMPP.protocol.client.Error)) as agsXMPP.protocol.client.Error;
-
-        //    }
-        //    set
-        //    {
-        //        if (HasTag(typeof(agsXMPP.protocol.client.Error)))
-        //            RemoveTag(typeof(agsXMPP.protocol.client.Error));
-                
-        //        if (value != null)
-        //            this.AddChild(value);
-        //    }
-        //}
 	}
 }
