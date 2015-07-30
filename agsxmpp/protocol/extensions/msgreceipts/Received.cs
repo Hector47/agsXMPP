@@ -19,8 +19,6 @@
  * http://www.ag-software.de														 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-using System;
-
 using agsXMPP.Xml.Dom;
 
 namespace agsXMPP.protocol.extensions.msgreceipts
@@ -35,8 +33,14 @@ namespace agsXMPP.protocol.extensions.msgreceipts
          */
         public Received()
         {
-            this.TagName    = "received";
-            this.Namespace  = Uri.MSG_RECEIPT;
+            TagName    = "received";
+            Namespace  = Uri.MSG_RECEIPT;
+        }
+
+        public string Id
+        {
+            get { return GetAttribute("id"); }
+            set { SetAttribute("id", value); }
         }
     }
 }
