@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Copyright (c) 2003-2012 by AG-Software 											 *
+ * Copyright (c) 2003-2016 by AG-Software 											 *
  * All Rights Reserved.																 *
  * Contact information for AG-Software is available at http://www.ag-software.de	 *
  *																					 *
@@ -17,9 +17,7 @@
  *																					 *
  * For general enquiries visit our website at:										 *
  * http://www.ag-software.de														 *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
-
-using System;
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 using agsXMPP.Xml.Dom;
 
@@ -33,8 +31,8 @@ namespace agsXMPP.protocol.x
     {
         public Event()
         {
-            this.TagName    = "x";
-            this.Namespace  = Uri.X_EVENT;
+            TagName    = "x";
+            Namespace  = Uri.X_EVENT;
         }
 
         /// <summary>
@@ -117,7 +115,5 @@ namespace agsXMPP.protocol.x
             get { return GetTag("id"); }
             set { SetTag("id", value); }
         }
-
-   
     }
 }
