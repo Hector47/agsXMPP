@@ -486,7 +486,7 @@ namespace agsXMPP.Xml.Dom
             return SelectSingleElement<T>() != null;
         }
 
-        public bool HasTagt<T>(bool traverseChildren) where T : Element
+        public bool HasTag<T>(bool traverseChildren) where T : Element
         {
             return SelectSingleElement<T>(traverseChildren) != null;
         }
