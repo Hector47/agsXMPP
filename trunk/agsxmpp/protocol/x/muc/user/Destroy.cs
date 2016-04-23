@@ -19,8 +19,6 @@
  * http://www.ag-software.de														 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-using System;
-
 namespace agsXMPP.protocol.x.muc.user
 {
     public class Destroy : agsXMPP.protocol.x.muc.owner.Destroy
