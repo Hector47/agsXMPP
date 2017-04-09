@@ -47,11 +47,6 @@ namespace agsXMPP.Sasl.DigestMD5
 		public Step2(Step1 step1, string username, string password, string server)
 		{
             this.Nonce		= step1.Nonce;
-            
-            // fixed for SASL n amessage servers (jabberd 1.x)
-            if (SupportsAuth(step1.Qop))
-                this.Qop        = "auth";
-			
             this.Realm		= step1.Realm;
 			this.Charset	= step1.Charset;
 			this.Algorithm	= step1.Algorithm;
@@ -65,21 +60,7 @@ namespace agsXMPP.Sasl.DigestMD5
 			GenerateDigestUri();
 			GenerateResponse();
 		}
-        
-        /// <summary>
-        /// Does the server support Auth?
-        /// </summary>
-        /// <param name="qop"></param>
-        /// <returns></returns>
-        private bool SupportsAuth(string qop)
-        {
-            string[] auth = qop.Split(',');
-            // This overload was not available in the CF, so updated this to the following
-            //bool ret = Array.IndexOf(auth, "auth") < 0 ? false : true;
-            bool ret = Array.IndexOf(auth, "auth", auth.GetLowerBound(0), auth.Length) < 0 ? false : true;            
-            return ret;
-        }
-        
+       
         /// <summary>
 		/// parses a message and returns the step2 object
 		/// </summary>
