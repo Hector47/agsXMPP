@@ -36,7 +36,7 @@ namespace agsXMPP.Sasl.DigestMD5
 	/// <summary>
 	/// Summary description for Step1.
 	/// </summary>
-	public class Step1 : DigestMD5Mechanism // Mechanism 
+	public class Step1 : DigestMD5Mechanism
 	{
         /// <summary>
         /// Exception occurs when we were unable to parse the challenge
@@ -64,7 +64,7 @@ namespace agsXMPP.Sasl.DigestMD5
 		#region << Properties >>
 		private string	m_Realm;		
 		private string	m_Nonce;		
-		private string	m_Qop;//			= "auth";		
+		private string	m_Qop			= "auth";		
 		private string	m_Charset		= "utf-8";		
 		private string	m_Algorithm;
 		
