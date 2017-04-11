@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.30729</ProductVersion>
@@ -216,6 +216,7 @@
     <Compile Include="protocol\iq\browse\Service.cs" />
     <Compile Include="protocol\iq\disco\DiscoManager.cs" />
     <Compile Include="protocol\iq\register\RegisterEventArgs.cs" />
+    <Compile Include="protocol\iq\rpc\RpcHelper.cs" />
     <Compile Include="protocol\sasl\FailureCondition.cs" />
     <Compile Include="protocol\server\Presence.cs" />
     <Compile Include="protocol\time\Time.cs" />
@@ -634,6 +635,9 @@
     </Compile>
     <Compile Include="protocol\iq\privacy\RuleManager.cs" />
     <Compile Include="protocol\x\vcard_update\VcardUpdate.cs" />
+    <Compile Include="Sasl\ExtendedData.cs" />
+    <Compile Include="Sasl\Facebook\FacebookExtendedData.cs" />
+    <Compile Include="Sasl\Facebook\FacebookMechanism.cs" />
     <Compile Include="Sasl\Gssapi\GssapiMechanism.cs" />
     <Compile Include="Sasl\Gssapi\SSPIHelper.cs" />
     <Compile Include="Sasl\SaslEventArgs.cs">
@@ -673,6 +677,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Util\Runtime.cs" />
+    <Compile Include="Xml\Dom\CData.cs" />
     <Compile Include="Xml\Dom\Comment.cs">
       <SubType>Code</SubType>
     </Compile>
