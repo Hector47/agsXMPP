@@ -272,7 +272,7 @@ namespace agsXMPP.Sasl.DigestMD5
 			sb.Append(AddQuotes(this.Username));
 			sb.Append(",");
 			sb.Append("realm=");
-			sb.Append(AddQuotes(this.Realm));
+			sb.Append(AddQuotes(this.Realm ?? this.Server));
 			sb.Append(",");
 			sb.Append("nonce=");
 			sb.Append(AddQuotes(this.Nonce));
